@@ -1,8 +1,4 @@
 
-
-/************** ECE2049 DEMO CODE ******************/
-/**************  13 March 2019   ******************/
-/***************************************************/
 //#include <msp430.h>
 
 /* Peripherals.c and .h are where the functions that implement
@@ -42,7 +38,7 @@ char reset(void);
     int pressed;
     state = 0;
 
-    WDTCTL = WDTPW | WDTHOLD;    // Stop watchdog timer. Always need to stop this!!
+    WDTCTL = WDTPW | WDTHOLD;    // Stop watchdog timer. 
     // You can then configure it properly, if desired
     // Useful code starts here
     initLeds();
@@ -304,13 +300,9 @@ char reset(void);
 
 void swDelay(char numLoops)
 {
-    // This function is a software delay. It performs
-    // useless loops to waste a bit of time
-    //
+  
     // Input: numLoops = number of delay loops to execute
     // Output: none
-    //
-    // smj, ECE2049, 25 Aug 2013
     volatile unsigned int i,j;  // volatile to prevent removal in optimization
     // by compiler. Functionally this is useless code
     for (j=0; j<numLoops; j++)
@@ -322,13 +314,8 @@ void swDelay(char numLoops)
 }
 void swDelay2(char numLoops2) // swDelay2 lowers the time a led is on to make it more difficult
 {
-    // This function is a software delay. It performs
-    // useless loops to waste a bit of time
-    //
     // Input: numLoops = number of delay loops to execute
     // Output: none
-    //
-    // smj, ECE2049, 25 Aug 2013
     volatile unsigned int i,j;  // volatile to prevent removal in optimization
     // by compiler. Functionally this is useless code
     for (j=0; j<numLoops2; j++)
